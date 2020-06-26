@@ -39,7 +39,13 @@ class LinkedList:
         self.head = self.head.next_node
         return head_value
 
-
+    def remove_tail(self):
+        last_node = self.head
+        while last_node.next_node is not None:
+            previous = last_node
+            last_node = last_node.next_node
+            print(previous.value)
+        previous.next_node = None
 
 
     def contains(self, value):
@@ -53,3 +59,4 @@ class LinkedList:
                 return True
             current_node = current_node.next_node
         return False
+
